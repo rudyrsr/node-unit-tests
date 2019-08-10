@@ -1,5 +1,8 @@
 pipeline{
     agent none;
+    enviroment {
+      myUsername = "RUDY"
+    }
     stages{
         stage("Test")
         {
@@ -7,6 +10,7 @@ pipeline{
                 script{
                     node{
                         print"Mi primer stage esta en ejecucion !!!"
+                        echo "mi nombre es :${myUsername}"
                     }
                 }
             }
